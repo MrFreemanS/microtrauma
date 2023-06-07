@@ -64,7 +64,7 @@ class LoginFragment : Fragment() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyjson.com").client(client)
+            .baseUrl("https://dummyjson.com/").client(client)
             .addConverterFactory(GsonConverterFactory.create()).build()
         mainApi = retrofit.create(MainApi::class.java)
     }
@@ -75,14 +75,18 @@ class LoginFragment : Fragment() {
             val message = response.errorBody()?.string()?.let {
                 JSONObject(it).getString("message")
             }
+
             requireActivity().runOnUiThread {
                 binding.error.text = message
                 val user = response.body()
                 if(user != null){
 
-                    binding.name.text = user.firstName
+                    //binding.name.text = user.firstName
                     binding.bNext.visibility = View.VISIBLE
-                    viewModel.token.value = user.token
+
+                    viewModel.userData.value = user
+
+                //viewModel.token.value = user.token
                 }
             }
         }
