@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="ru.neo31.microtrauma.LoginFragment"
-        android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_userFragment"
@@ -17,6 +16,5 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="ru.neo31.microtrauma.UserFragment"
-        android:label="@string/user_fragment_label"
         tools:layout="@layout/fragment_user"/>
 </navigation>
