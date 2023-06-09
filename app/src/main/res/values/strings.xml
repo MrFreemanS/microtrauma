@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">microtrauma</string>
-    <string name="next">Next</string>
-
+    <string name="enter_in_app">Enter</string>
     <string name="login_fragment">LOGIN</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>

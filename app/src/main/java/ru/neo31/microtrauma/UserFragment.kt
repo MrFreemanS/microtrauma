@@ -14,6 +14,14 @@ import ru.neo31.microtrauma.databinding.FragmentUserBinding
 import ru.neo31.microtrauma.retrofit.MainApi
 import com.squareup.picasso.Picasso
 
+fun concat(vararg string: String): String {
+    val sb = StringBuilder()
+    for (s in string) {
+        sb.append(s)
+    }
+
+    return sb.toString()
+}
 
 class UserFragment : Fragment() {
 
@@ -37,8 +45,8 @@ class UserFragment : Fragment() {
             requireActivity().runOnUiThread {
                 if(UserData != null){
                     Picasso.get().load(UserData.image).into(binding.imageView)
-                    binding.nameTextView.text = UserData.firstName
-                    binding.lastNameTextView.text = UserData.lastName
+                    binding.nameTextView.text = concat (UserData.firstName," ", UserData.lastName)
+                    //binding.lastNameTextView.text = UserData.lastName
                     binding.genderTextView.text = UserData.gender
                 }
             }

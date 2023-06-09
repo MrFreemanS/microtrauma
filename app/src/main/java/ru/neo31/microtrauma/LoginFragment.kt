@@ -40,9 +40,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRetrofit()
         binding.apply {
-            bNext.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_userFragment)
-            }
+
             bSignIn.setOnClickListener {
                 auth(
                     AuthRequest(
@@ -80,13 +78,11 @@ class LoginFragment : Fragment() {
                 binding.error.text = message
                 val user = response.body()
                 if(user != null){
-
+                    findNavController().navigate(R.id.action_loginFragment_to_userFragment)
                     //binding.name.text = user.firstName
-                    binding.bNext.visibility = View.VISIBLE
+                    //binding.bNext.visibility = View.VISIBLE
 
                     viewModel.userData.value = user
-
-                //viewModel.token.value = user.token
                 }
             }
         }

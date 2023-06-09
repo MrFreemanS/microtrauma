@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Микротравмы</string>
-    <string name="next">Войти</string>
     <string name="login_fragment">Авторизация</string>
+    <string name="enter_in_app">Войти в приложение</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
 </resources>
