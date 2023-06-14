@@ -8,13 +8,14 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/userLogoimageView"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/user_logo"
         tools:src="@tools:sample/avatars" />
 
 
@@ -24,13 +25,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="user_name"
+        android:text="@string/user_name"
         android:textColor="#181818"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/userLogoimageView" />
 
 
 
@@ -40,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Пол"
+        android:text="@string/gender"
         android:textColor="#6DDFC4"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,26 +57,26 @@
         android:background="#f2f2f2"
         android:ems="10"
         android:padding="16dp"
-        android:text="пол"
+        android:text="@string/gender"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genderLabel" />
 
     <TextView
-        android:id="@+id/birthdayLabel"
+        android:id="@+id/birthDateLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Дата рождения"
+        android:text="@string/birthdate"
         android:textColor="#6DDFC4"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/genderTextView" />
 
     <TextView
-        android:id="@+id/birthdayTextView"
+        android:id="@+id/birthDateTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -84,11 +85,11 @@
         android:background="@color/textview_background_gray"
         android:ems="10"
         android:padding="16dp"
-        android:text="06.05.1992"
+        android:text="@string/birthdate"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthdayLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/birthDateLabel" />
 
     <TextView
         android:id="@+id/positionLabel"
@@ -96,11 +97,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Должность"
+        android:text="@string/position"
         android:textColor="#6DDFC4"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthdayTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/birthDateTextView" />
 
     <TextView
         android:id="@+id/positionTextView"
@@ -112,7 +113,7 @@
         android:background="@color/textview_background_gray"
         android:ems="10"
         android:padding="16dp"
-        android:text="Монтажник"
+        android:text="@string/position"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Подразделение"
+        android:text="@string/department"
         android:textColor="#6DDFC4"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,12 +142,23 @@
         android:background="@color/textview_background_gray"
         android:ems="10"
         android:padding="16dp"
-        android:text="Department"
+        android:text="@string/department"
         android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/departmentLabel" />
 
-
+    <Button
+        android:id="@+id/bNewTrauma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/got_microtrauma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/departmentTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

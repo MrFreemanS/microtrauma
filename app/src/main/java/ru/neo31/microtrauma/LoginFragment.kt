@@ -73,15 +73,11 @@ class LoginFragment : Fragment() {
             val message = response.errorBody()?.string()?.let {
                 JSONObject(it).getString("message")
             }
-
             requireActivity().runOnUiThread {
                 binding.error.text = message
                 val user = response.body()
                 if(user != null){
                     findNavController().navigate(R.id.action_loginFragment_to_userFragment)
-                    //binding.name.text = user.firstName
-                    //binding.bNext.visibility = View.VISIBLE
-
                     viewModel.userData.value = user
                 }
             }

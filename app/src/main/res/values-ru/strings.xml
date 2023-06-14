@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Микротравмы</string>
-    <string name="login_fragment">Авторизация</string>
     <string name="enter_in_app">Войти в приложение</string>
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="gender">Пол</string>
+    <string name="birthdate">День рождения</string>
+    <string name="position">Должность</string>
+    <string name="department">Подразделение</string>
+    <string name="user_logo">Аватарка</string>
+    <string name="got_microtrauma">Получил микротравму</string>
 </resources>

@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">microtrauma</string>
     <string name="enter_in_app">Enter</string>
-    <string name="login_fragment">LOGIN</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="user_name">User_name</string>
+    <string name="gender">Gender</string>
+    <string name="birthdate">BirthDate</string>
+    <string name="position">Position</string>
+    <string name="department">Department</string>
+    <string name="user_logo">user_logo</string>
+    <string name="got_microtrauma">Got microtrauma</string>
 </resources>

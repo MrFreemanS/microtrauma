@@ -16,5 +16,15 @@
     <fragment
         android:id="@+id/userFragment"
         android:name="ru.neo31.microtrauma.UserFragment"
-        tools:layout="@layout/fragment_user"/>
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_userFragment_to_NewTraumaFragment"
+            app:destination="@id/NewTraumaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/NewTraumaFragment"
+        android:name="ru.neo31.microtrauma.NewTraumaFragment"
+        tools:layout="@layout/fragment_new_trauma"/>
+
 </navigation>

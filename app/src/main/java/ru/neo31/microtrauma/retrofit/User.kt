@@ -7,11 +7,7 @@ data class User(
     val firstName: String,
     val lastName: String,
     val gender: String,
-
-    val companyDepartment: String,
-
-
-
     val image: String,
-    val token: String
+    val token: String,
+    val birthDate: String
 )
