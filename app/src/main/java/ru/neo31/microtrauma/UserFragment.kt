@@ -14,6 +14,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import ru.neo31.microtrauma.databinding.FragmentUserBinding
 import ru.neo31.microtrauma.retrofit.MainApi
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ru.neo31.microtrauma.retrofit.AuthRequest
 
 fun concat(vararg string: String): String {
@@ -45,20 +48,33 @@ class UserFragment : Fragment() {
 
         initRetrofit()
         viewModel.userData.observe(viewLifecycleOwner){UserData ->
-            requireActivity().runOnUiThread {
-                if(UserData != null){
-                    Picasso.get().load(UserData.image).into(binding.userLogoimageView)
-                    binding.nameTextView.text = concat (UserData.firstName," ", UserData.lastName)
-                    //binding.lastNameTextView.text = UserData.lastName
-                    //binding.genderTextView.text = UserData.gender
+            if(UserData != null) {
+                CoroutineScope(Dispatchers.IO).launch{
+                    val response = mainApi.getUserbyID()
+                    val user = response.body()
+                    requireActivity().runOnUiThread {
+                        if (user !=null)
+                        {
+                            Picasso.get().load(UserData.image).into(binding.userLogoimageView)
+                            binding.nameTextView.text = concat (user.firstName," ", user.lastName)
+                            binding.genderTextView.text = user.gender
+                            binding.birthDateTextView.text = user.birthDate
+                            binding.positionTextView.text = user.company.title
+                            binding.departmentTextView.text = user.company.department
+
+                        }
+                    }
 
                 }
             }
+
+
+
         }
         binding.apply {
 
             bNewTrauma.setOnClickListener {
-                findNavController().navigate(R.id.action_userFragment_to_NewTraumaFragment)
+                findNavController().navigate(R.id.action_userFragment_to_typeTraumaFragment)
             }
         }
     }
@@ -77,4 +93,5 @@ class UserFragment : Fragment() {
             .addConverterFactory(GsonConverterFactory.create()).build()
         mainApi = retrofit.create(MainApi::class.java)
     }
+
 }

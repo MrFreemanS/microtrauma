@@ -11,4 +11,6 @@
     <string name="department">Подразделение</string>
     <string name="user_logo">Аватарка</string>
     <string name="got_microtrauma">Получил микротравму</string>
+    <string name="trauma_type">Вид травмы</string>
+    <string name="for_registration_type_of_trauma">Для регистрации происшествия выберите вид травмы</string>
 </resources>

@@ -10,4 +10,6 @@
     <string name="department">Department</string>
     <string name="user_logo">user_logo</string>
     <string name="got_microtrauma">Got microtrauma</string>
+    <string name="trauma_type">trauma_type</string>
+    <string name="for_registration_type_of_trauma">To register an incident, select the type of injury</string>
 </resources>

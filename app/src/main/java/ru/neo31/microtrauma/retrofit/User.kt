@@ -9,5 +9,12 @@ data class User(
     val gender: String,
     val image: String,
     val token: String,
-    val birthDate: String
+    val birthDate: String,
+    val position: String,
+    val company:Company
+)
+
+data class Company (
+    val department: String,
+    val title:String
 )

@@ -13,18 +13,19 @@
             android:id="@+id/action_loginFragment_to_userFragment"
             app:destination="@id/userFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/userFragment"
         android:name="ru.neo31.microtrauma.UserFragment"
         tools:layout="@layout/fragment_user">
         <action
-            android:id="@+id/action_userFragment_to_NewTraumaFragment"
-            app:destination="@id/NewTraumaFragment" />
+            android:id="@+id/action_userFragment_to_typeTraumaFragment"
+            app:destination="@id/typeTraumaFragment" />
     </fragment>
-
     <fragment
-        android:id="@+id/NewTraumaFragment"
-        android:name="ru.neo31.microtrauma.NewTraumaFragment"
-        tools:layout="@layout/fragment_new_trauma"/>
+        android:id="@+id/typeTraumaFragment"
+        android:name="ru.neo31.microtrauma.TypeTraumaFragment"
+        android:label="fragment_type_trauma"
+        tools:layout="@layout/fragment_type_trauma" />
 
 </navigation>
