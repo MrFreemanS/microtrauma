@@ -1,4 +1,4 @@
-package ru.neo31.microtrauma.retrofit
+package ru.neo31.microtrauma.dataclasses
 
 data class User(
     val id: Int,
@@ -11,7 +11,7 @@ data class User(
     val token: String,
     val birthDate: String,
     val position: String,
-    val company:Company
+    val company: Company
 )
 
 data class Company (

@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import ru.neo31.microtrauma.adapters.TraumaTypeAdapter
 import ru.neo31.microtrauma.databinding.FragmentTypeTraumaBinding
 
 
@@ -12,7 +14,8 @@ class TypeTraumaFragment : Fragment() {
 
     private lateinit var binding: FragmentTypeTraumaBinding
 
-    private lateinit var viewModel: TypeTraumaViewModel
+    private val adapter = TraumaTypeAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +27,7 @@ class TypeTraumaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        binding.rv.adapter = adapter
+        binding.rv.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 }

@@ -2,6 +2,7 @@ package ru.neo31.microtrauma.retrofit
 
 import retrofit2.Response
 import retrofit2.http.*
+import ru.neo31.microtrauma.dataclasses.User
 
 interface MainApi {
     @POST("auth/login")
