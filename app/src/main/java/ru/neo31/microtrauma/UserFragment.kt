@@ -50,18 +50,17 @@ class UserFragment : Fragment() {
         viewModel.userData.observe(viewLifecycleOwner){UserData ->
             if(UserData != null) {
                 CoroutineScope(Dispatchers.IO).launch{
-                    val response = mainApi.getUserbyID()
+                    val response = mainApi.getUser(UserData.token)
                     val user = response.body()
                     requireActivity().runOnUiThread {
                         if (user !=null)
                         {
-                            Picasso.get().load(UserData.image).into(binding.userLogoimageView)
-                            binding.nameTextView.text = concat (user.firstName," ", user.lastName)
+                            //Picasso.get().load(UserData.image).into(binding.userLogoimageView)
+                            binding.nameTextView.text = user.user_full_name
                             binding.genderTextView.text = user.gender
-                            binding.birthDateTextView.text = user.birthDate
-                            binding.positionTextView.text = user.company.title
-                            binding.departmentTextView.text = user.company.department
-
+                            binding.birthDateTextView.text = user.user_birthDate
+                            binding.positionTextView.text = user.user_position_id
+                            binding.departmentTextView.text = user.user_department_id
                         }
                     }
 
@@ -89,9 +88,8 @@ class UserFragment : Fragment() {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyjson.com/").client(client)
+            .baseUrl("http://api.neo31.ru:7000/").client(client)
             .addConverterFactory(GsonConverterFactory.create()).build()
         mainApi = retrofit.create(MainApi::class.java)
     }
-
 }

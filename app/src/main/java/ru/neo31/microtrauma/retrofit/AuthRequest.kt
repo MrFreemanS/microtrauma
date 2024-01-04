@@ -1,6 +1,6 @@
 package ru.neo31.microtrauma.retrofit
 
 data class AuthRequest(
-    val username: String,
+    val login: String,
     val password: String
 )
