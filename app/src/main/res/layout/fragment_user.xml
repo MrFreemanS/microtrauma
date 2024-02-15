@@ -26,7 +26,6 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/user_name"
-        android:textColor="#181818"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

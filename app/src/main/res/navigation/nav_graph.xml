@@ -22,6 +22,7 @@
             android:id="@+id/action_userFragment_to_typeTraumaFragment"
             app:destination="@id/typeTraumaFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/typeTraumaFragment"
         android:name="ru.neo31.microtrauma.TypeTraumaFragment"
